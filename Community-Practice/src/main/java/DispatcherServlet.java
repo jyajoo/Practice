@@ -13,7 +13,6 @@ import java.io.IOException;
 public class DispatcherServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.getWriter().append("Hello");
         Rq rq = new Rq(req, resp);
 
         MemberController memberController = new MemberController();
