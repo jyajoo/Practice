@@ -1,7 +1,9 @@
+<%@ page import="com.ll.exam.Rq" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
-    int number = Integer.parseInt(request.getParameter("number"));
-    int limit = Integer.parseInt(request.getParameter("limit"));
+    Rq rq = new Rq(request, response);
+    int number = rq.getIntParam("number", 0);
+    int limit = rq.getIntParam("limit", 0);
 %>
 
 <h1><%=number%>단</h1>
