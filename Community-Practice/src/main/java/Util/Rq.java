@@ -48,4 +48,26 @@ public class Rq {
             throw new RuntimeException(e);
         }
     }
+
+    /*
+    getRequestURI
+    : http://localhost:8080/usr/article/list/free?page=1 에서
+    /usr/article/list/free 부분만 가져온다.
+     */
+    public String getPath() {
+        return req.getRequestURI();
+    }
+
+    public String getMethod() {
+        return req.getMethod();
+    }
+
+    public String getParam(String paramName, String defaultValue) {
+        String value = req.getParameter(paramName);
+
+        if (value == null || value.trim().length() == 0) {
+            return defaultValue;
+        }
+        return value;
+    }
 }
